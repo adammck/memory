@@ -103,12 +103,12 @@ func (cg CGroups) CPUQuota() (float64, bool, error) {
 		return -1, false, nil
 	}
 
-	cfsQuotaUs, err := cpuCGroup.readInt(_cgroupCPUCFSQuotaUsParam)
+	cfsQuotaUs, err := cpuCGroup.ReadInt(_cgroupCPUCFSQuotaUsParam)
 	if defined := cfsQuotaUs > 0; err != nil || !defined {
 		return -1, defined, err
 	}
 
-	cfsPeriodUs, err := cpuCGroup.readInt(_cgroupCPUCFSPeriodUsParam)
+	cfsPeriodUs, err := cpuCGroup.ReadInt(_cgroupCPUCFSPeriodUsParam)
 	if err != nil {
 		return -1, false, err
 	}

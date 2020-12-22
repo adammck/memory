@@ -68,8 +68,8 @@ func (cg *CGroup) readFirstLine(param string) (string, error) {
 	return "", io.ErrUnexpectedEOF
 }
 
-// readInt parses the first line from a cgroup param file as int.
-func (cg *CGroup) readInt(param string) (int, error) {
+// ReadInt parses the first line from a cgroup param file as int.
+func (cg *CGroup) ReadInt(param string) (int, error) {
 	text, err := cg.readFirstLine(param)
 	if err != nil {
 		return 0, err

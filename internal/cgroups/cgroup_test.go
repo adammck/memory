@@ -114,7 +114,7 @@ func TestCGroupReadInt(t *testing.T) {
 		cgroupPath := filepath.Join(testDataCGroupsPath, tt.name)
 		cgroup := NewCGroup(cgroupPath)
 
-		value, err := cgroup.readInt(tt.paramName)
+		value, err := cgroup.ReadInt(tt.paramName)
 		assert.Equal(t, tt.expectedValue, value, "%s/%s", tt.name, tt.paramName)
 
 		if tt.shouldHaveError {
