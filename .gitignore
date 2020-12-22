@@ -1,4 +1,5 @@
 /example/example
+/tests/.vagrant
 
 # Binaries for programs and plugins
 *.exe
